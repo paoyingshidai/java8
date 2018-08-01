@@ -6,7 +6,7 @@ public class SupplierClient {
 
 	public static void main(String[] args) {
 
-		SupplierTask task = new SupplierTask(() -> "hello");
+		SupplierTask task = new SupplierTask(() -> new String("hello"));
 		System.out.println(task.get());
 	}
 
