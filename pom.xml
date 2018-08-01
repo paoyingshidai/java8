@@ -8,6 +8,8 @@
   <modules>
   	<module>java8-optional</module>
   	<module>java8-collection</module>
+  	<module>function</module>
+  	<module>java8-function</module>
   </modules>
   
   	<parent>
