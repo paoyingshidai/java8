@@ -7,7 +7,7 @@ package com.michael.java8.function.func;
  */
 public class Client {
 	public static void main(String[] args) {
-		UserTask task = new UserTask(name -> {return "hello : " + name;}); // 或者可以省略 return
+		UserTask task = new UserTask((name, name2) -> {return "hello : " + name + " and " + name2;}); // 或者可以省略 return
 		System.out.println(task.sayHello());
 	}
 }
@@ -23,7 +23,7 @@ class UserTask {
 		this.userService = userService;
 	}
 	public String sayHello() {
-		return userService.sayHello("Michael");
+		return userService.sayHello("Michael", "Jordom");
 	}
 }
 
@@ -34,5 +34,5 @@ class UserTask {
  */
 @FunctionalInterface
 interface IUserService {
-	String sayHello(String name);
+	String sayHello(String name, String name2);
 }
