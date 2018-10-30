@@ -2,6 +2,12 @@ package com.michael.java8.function.func;
 
 import java.util.function.Consumer;
 
+
+/**
+ * void accept(T t);
+ * Consumer 接口只接受参数，没有返回值
+ *
+ */
 public class ConsumerClient {
 
 	public static void main(String[] args) {

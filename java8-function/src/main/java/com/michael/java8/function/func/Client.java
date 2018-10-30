@@ -8,7 +8,7 @@ package com.michael.java8.function.func;
 public class Client {
 	public static void main(String[] args) {
 		UserTask task = new UserTask((name, name2) -> {return "hello : " + name + " and " + name2;}); // 或者可以省略 return
-		System.out.println(task.sayHello());
+		System.out.println(task.sayHello("Micahel", "KorBe"));
 	}
 }
 
@@ -16,14 +16,16 @@ public class Client {
  * 调用 function 接口
  * @author Michael
  *
+ * @FunctionalInterface 注解比较宽松，没有固定的入参数量限定和返回结果限定
+ *
  */
 class UserTask {
 	IUserService userService;
 	public UserTask(IUserService userService) {
 		this.userService = userService;
 	}
-	public String sayHello() {
-		return userService.sayHello("Michael", "Jordom");
+	public String sayHello(String name1, String name2) {
+		return userService.sayHello(name1, name2);
 	}
 }
 

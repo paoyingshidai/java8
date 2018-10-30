@@ -20,12 +20,18 @@ public class FunctionClient {
 		MyFunction func1 = new MyFunction();
 		MyFunction2 func2 = new MyFunction2();
 		System.out.println(task.andThen(func1, func2));
+
+		System.out.println(FunctionTask.compute(5, source -> { return source + source; }));
+
 	}
 
 }
 
 /**
  * 使用接口规范可以免除接口实现的麻烦，直接在使用的时候用 lamda 表达式进行实现
+ *
+ * Function<T, R> 接口有输入参数 T, 有返回结果 R
+ *
  * @author Michael
  *
  */
@@ -39,6 +45,11 @@ class FunctionTask {
 
 	public String sayHello() {
 		return func.apply("Michael");
+	}
+
+
+	public static Integer compute(int source, Function<Integer, Integer> method) {
+		return method.apply(source);
 	}
 
 	public String andThen(Function<String, String> func1, Function<String, String> func2) {
@@ -60,6 +71,9 @@ class MyFunction2 implements Function<String, String> {
 	}
 }
 
+/**
+ * 多个入参，一个返回值
+ */
 class MyBiFunciton implements BiFunction<String, String, String> {
 	@Override
 	public String apply(String t, String u) {
