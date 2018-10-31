@@ -13,6 +13,9 @@ public class UserTest {
 
 	/**
 	 * 可变聚合  参见 http://blog.csdn.net/u014082714/article/details/51423756
+	 *
+	 * 在列表进行处理的时候不需要拆箱封箱，避免性能损耗
+	 *
 	 * @return
 	 */
 	public List<String> getUsernames() {
@@ -47,6 +50,7 @@ public class UserTest {
 
 		users.stream().filter(user -> user.getUserId() > 5)
 						.forEach(user -> user.setUserId(1L));
+
 //		Stream.generate(Math::random);
 //		Stream.iterate(1, item -> item*10).limit(10).forEach(System.out::println);
 		return users;
