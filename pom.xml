@@ -10,6 +10,7 @@
   	<module>java8-collection</module>
   	<module>function</module>
   	<module>java8-function</module>
+      <module>java8-date</module>
   </modules>
   
   	<parent>
