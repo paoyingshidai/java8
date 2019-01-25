@@ -2,6 +2,7 @@ package com.michael.java8.collection.main;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.michael.java8.collection.bean.User;
@@ -56,6 +57,10 @@ public class UserTest {
 		return users;
 	}
 
+	/**
+	 * 求和
+	 * @return
+	 */
 	public Long sum() {
 		List<User> users = userRepository.getAll();
 		return users.stream().mapToLong(user -> user.getUserId()).sum();
@@ -66,17 +71,36 @@ public class UserTest {
 		return users.stream().mapToInt(user -> user.getAge()).max().getAsInt();
 	}
 
+	/**
+	 * 最大值
+	 * @return
+	 */
 	public User maxUserByAge() {
 		List<User> users = userRepository.getAll();
 		return users.stream().max((a, b) -> a.getAge() - b.getAge()).orElse(new User());
 	}
 
+	/**
+	 * 排序
+	 * @return
+	 */
 	public List<User> sort() {
 		List<User> users = userRepository.getAll();
 		users.stream().sorted((a, b) -> (a.getAge() - b.getAge()));
 		return users;
 	}
 
+
+	/**
+	 * List to Map
+	 * @param users
+	 * @return
+	 */
+	public Map listToMap(List<User> users) {
+
+		List<User> us = userRepository.getAll();
+		return us.stream().collect(Collectors.toMap(m -> m.getUserId(), m -> m));
+	}
 
 	public static void main(String[] args) {
 
