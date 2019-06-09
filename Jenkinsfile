@@ -15,6 +15,7 @@ pipeline {
       steps {
         retry(count: 3) {
           echo 'retry-----------'
+          echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
         }
       }
       post { 
