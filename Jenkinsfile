@@ -4,6 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo "hello, this my first jenkinfile"'
+        echo 'print message'
       }
     }
   }
