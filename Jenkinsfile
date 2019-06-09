@@ -9,6 +9,7 @@ pipeline {
           echo 'retry message ......'
         }
 
+        error 'Error'
       }
     }
   }
