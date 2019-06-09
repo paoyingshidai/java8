@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn test'
+        sh 'echo "hello, this my first jenkinfile"'
       }
     }
   }
