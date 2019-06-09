@@ -16,7 +16,11 @@ pipeline {
         retry(count: 3) {
           echo 'retry-----------'
         }
-
+      }
+      post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
       }
     }
   }
