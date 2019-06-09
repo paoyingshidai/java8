@@ -6,7 +6,7 @@ pipeline {
         sh 'echo "hello, this my first jenkinfile"'
         echo 'print message'
         retry(count: 2) {
-          sleep 1
+          echo 'retry message ......'
         }
 
       }
