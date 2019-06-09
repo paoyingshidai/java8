@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh 'echo "hello, this my first jenkinfile"'
         echo 'print message'
-        timeout(time: 5, activity: true)
+        timeout(time: 5)
         retry(count: 2) {
           sleep 1
         }
