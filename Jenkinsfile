@@ -9,7 +9,14 @@ pipeline {
           echo 'retry message ......'
         }
 
-        error 'Error'
+      }
+    }
+    stage('Build2') {
+      steps {
+        retry(count: 3) {
+          echo 'retry-----------'
+        }
+
       }
     }
   }
