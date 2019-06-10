@@ -1,10 +1,13 @@
 pipeline {
   agent any
+  environment { 
+        CC = 'clang'
+  }
   stages {
     stage('Build') {
       steps {
         sh 'echo "hello, this my first jenkinfile"'
-        echo 'print message'
+        echo "environment CC = ${env.CC}"
         retry(count: 2) {
           echo 'retry message ......'
         }
