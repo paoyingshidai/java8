@@ -28,7 +28,7 @@ pipeline {
     stage('Build3') {
       steps {
         sh '/usr/local/git/bin/git clone https://github.com/paoyingshidai/java8.git'
-        sh 'mvn -Dmaven.test.skip clean package'
+        sh '/usr/local/maven3/mvn -Dmaven.test.skip clean package'
       }
     }
     
