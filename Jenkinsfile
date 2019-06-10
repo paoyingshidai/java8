@@ -7,18 +7,16 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo "hello, this my first jenkinfile"'
+        // 环境变量的引用
         echo "environment CC = ${env.CC}"
-        retry(count: 2) {
-          echo 'retry message ......'
-        }
-
+        // 全局环境变量
+        echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
       }
     }
     stage('Build2') {
       steps {
         retry(count: 3) {
           echo 'retry-----------'
-          echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
         }
       }
       post { 
@@ -34,6 +32,7 @@ pipeline {
         git 'https://github.com/paoyingshidai/java8.git'
         // sh '/usr/local/maven3/bin/mvn -Dmaven.test.skip clean package'
       }
+      // post 在构建中的各个阶段和状态的执行钩子
       post { 
         always { 
             echo 'always-------------'
