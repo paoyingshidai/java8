@@ -5,9 +5,9 @@ pipeline {
       // cron('0/10 * * * * ?')
       cron('H */4 * * 1-5')
   }
-  options {
+  // options {
       // timeout(time: 1, unit: 'SECONDS') 
-  }
+  // }
   environment { 
         CC = 'clang'
   }
@@ -68,8 +68,7 @@ pipeline {
     }
     
     stage('Build4') {
-      steps {
-        when {
+      when {
             branch 'master'
         }
         failFast true
@@ -92,7 +91,6 @@ pipeline {
             }
         }
       }
-    }
     
     
   }
