@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  // 定义超时时间
   options {
       timeout(time: 1, unit: 'SECONDS') 
   }
