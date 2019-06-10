@@ -24,5 +24,13 @@ pipeline {
         }
       }
     }
+    
+    stage('Build3') {
+      steps {
+        sh 'git clone https://github.com/paoyingshidai/java8.git'
+        sh 'mvn -Dmaven.test.skip clean package'
+      }
+    }
+    
   }
 }
