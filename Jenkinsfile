@@ -50,6 +50,7 @@ pipeline {
         aborted {
             echo 'aborted-------------'
         }    
+      }
     }
     
   }
