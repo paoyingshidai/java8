@@ -29,7 +29,7 @@ pipeline {
       steps {
         // sh '/usr/local/git/bin/git clone https://github.com/paoyingshidai/java8.git'
         git 'https://github.com/paoyingshidai/java8.git'
-        sh '/usr/local/maven3/bin/mvn -Dmaven.test.skip clean package'
+        // sh '/usr/local/maven3/bin/mvn -Dmaven.test.skip clean package'
       }
       post { 
         always { 
