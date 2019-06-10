@@ -3,7 +3,7 @@ pipeline {
   // 定义超时时间
   triggers {
       // cron('0/10 * * * * ?')
-      cron('H */4 * * 1-5')
+      cron('H/1 * * * *')
   }
   // options {
       // timeout(time: 1, unit: 'SECONDS') 
