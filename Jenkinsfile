@@ -6,7 +6,7 @@ pipeline {
       cron('H */4 * * 1-5')
   }
   options {
-      timeout(time: 1, unit: 'SECONDS') 
+      // timeout(time: 1, unit: 'SECONDS') 
   }
   environment { 
         CC = 'clang'
