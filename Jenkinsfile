@@ -5,10 +5,10 @@ pipeline {
   }
   stages {
     stage('Build') {
+       environment { 
+           AN_ACCESS_KEY = 'my-prefined-secret-text' 
+       }
       steps {
-        environment { 
-            AN_ACCESS_KEY = 'my-prefined-secret-text' 
-        }
         sh 'echo "hello, this my first jenkinfile"'
         // 环境变量的引用
         echo "environment CC = ${env.CC}"
