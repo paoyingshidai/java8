@@ -1,6 +1,9 @@
 pipeline {
   agent any
   // 定义超时时间
+  triggers {
+      cron('0/10 * * * * ?')
+  }
   options {
       timeout(time: 1, unit: 'SECONDS') 
   }
