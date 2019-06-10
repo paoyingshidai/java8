@@ -31,6 +31,25 @@ pipeline {
         git 'https://github.com/paoyingshidai/java8.git'
         sh '/usr/local/maven3/bin/mvn -Dmaven.test.skip clean package'
       }
+      post { 
+        always { 
+            echo 'always-------------'
+        }
+        changed {
+            echo 'changed------------'
+        }
+        failure {
+            echo 'failure------------'
+        }
+        success {
+            echo 'success------------'
+        }
+        unstable {
+            echo 'unstable------------'
+        }
+        aborted {
+            echo 'aborted-------------'
+        }    
     }
     
   }
